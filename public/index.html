@@ -9,10 +9,18 @@
         <script src="js/lib/angular.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/controllers/fotos-controller.js"></script>
+        <script src="js/directives/minhas-diretivas.js"></script>
     </head>
-    <body>
-        <div class="container" ng-controller="FotosController">
-            <h1 class="text-center">{{titulo}}</h1>
-        </div> <!-- fim container -->        
+    <body ng-controller="FotosController">
+        <div class="container">
+            <div class="jumbotron">
+                <h1 class="text-center">Alurapic</h1>
+            </div>
+            <div class="row">
+                <meu-painel ng-repeat="foto in fotos" titulo="{{foto.titulo}}">
+                    <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
+                </meu-painel>
+            </div><!-- fim row -->
+        </div><!-- fim container -->
     </body>
 </html>
